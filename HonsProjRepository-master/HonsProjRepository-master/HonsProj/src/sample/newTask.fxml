@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXSpinner?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import org.tbee.javafx.scene.layout.fxml.MigPane?>
+
+<?import javafx.scene.control.Spinner?>
+<MigPane layout="fill, wrap" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.newTaskCont">
+   <children>
+      <JFXTextField fx:id="txtCode" labelFloat="true" promptText="Enter Task Code" MigPane.cc="spanx, growx" />
+      <JFXTextField fx:id="txtTitle" labelFloat="true" promptText="Enter Task Title" MigPane.cc="spanx, growx" />
+      <MigPane layout="fill, wrap2" MigPane.cc="spanx, growx">
+         <children>
+             <Label text="Select task number" MigPane.cc="dock west, spanx, growx" />
+             <Spinner fx:id="spnNo" min="1" max="100"  MigPane.cc="dock east, spanx, growx"/>
+         </children>
+      </MigPane>
+      <MigPane layout="fill, wrap2" MigPane.cc="spanx, growx">
+         <children>
+            <JFXButton fx:id="btnSave" buttonType="RAISED" mnemonicParsing="false" style="-fx-background-color: #85c1e9;" text="Save" MigPane.cc="spanx, growx, dock west" />
+            <JFXButton fx:id="btnClose" buttonType="RAISED" mnemonicParsing="false" style="-fx-background-color: #85c1e9;" text="Close" MigPane.cc="spanx, growx, dock east" />
+         </children>
+      </MigPane>
+
+   </children>
+</MigPane>

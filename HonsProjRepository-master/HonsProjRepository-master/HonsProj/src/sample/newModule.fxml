@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import org.tbee.javafx.scene.layout.fxml.MigPane?>
+
+<MigPane layout="fill" maxHeight="-Infinity" maxWidth="400.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.newModuleCont">
+   <children>
+       <JFXTextField fx:id="txtCode" labelFloat="true" promptText="Enter Module Code" MigPane.cc="spanx,growx,wrap" />
+       <JFXTextField fx:id="txtName" labelFloat="true" promptText="Enter Module Name" MigPane.cc="spanx,growx,wrap" />
+       <MigPane layout="fill, wrap2" prefHeight="40.0" prefWidth="300.0" MigPane.cc="spanx,growx">
+           <Label text="Module Level:" />
+           <Spinner fx:id="spnModLevel" maxWidth="100.0" MigPane.cc="wrap, spanx,growx, dock east" />
+       </MigPane>
+       <MigPane layout="fill, wrap2" prefHeight="40.0" prefWidth="300.0" MigPane.cc="spanx,growx">
+           <Label text="Lecturer Code:" MigPane.cc="dock west" />
+           <MigPane layout="wrap2, fill" prefHeight="40.0" prefWidth="300.0" MigPane.cc="spanx,growx, dock east" >
+               <ComboBox fx:id="cmbLectCode" maxWidth="100.0" prefWidth="100.0" promptText="None" MigPane.cc="" />
+               <JFXButton fx:id="btnNewLect" buttonType="RAISED" mnemonicParsing="false" prefWidth="100.0" style="-fx-background-color: #aed6f1;" text="New Lecturer" MigPane.cc="wrap, spanx,growx" />
+           </MigPane>
+       </MigPane>
+       <MigPane layout="fill, wrap2" prefHeight="40.0" prefWidth="300.0" MigPane.cc="spanx,growx">
+           <JFXButton fx:id="btnSaveMod" buttonType="RAISED" mnemonicParsing="false" prefWidth="100.0" style="-fx-background-color: #aed6f1;" text="Save" MigPane.cc="dock west" />
+           <JFXButton fx:id="btnCancelMod" buttonType="RAISED" mnemonicParsing="false" prefWidth="100.0" style="-fx-background-color: #aed6f1;" text="Cancel" MigPane.cc="dock east" />
+       </MigPane>
+   </children>
+</MigPane>

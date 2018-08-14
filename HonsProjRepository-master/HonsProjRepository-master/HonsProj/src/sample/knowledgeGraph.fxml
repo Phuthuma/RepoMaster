@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.TreeView?>
+<?import org.tbee.javafx.scene.layout.fxml.MigPane?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<MigPane layout="fill,wrap2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.knowledgeGraphCont">
+    <children>
+        <MigPane layout="fill, wrap2" prefHeight="40.0" prefWidth="200.0"  MigPane.cc="dock north, span, grow" >
+            <children>
+                <JFXButton text="" visible="false" mnemonicParsing="false" MigPane.cc="dock west" />
+                <MigPane MigPane.cc="dock east">
+                    <children>
+                        <JFXButton fx:id="btnBack" mnemonicParsing="false" text="Back" style="-fx-background-color: #85c1e9;" />
+                        <JFXButton fx:id="btnLogOut" text="LogOut" style="-fx-background-color: #85c1e9;"/>
+                    </children>
+                </MigPane>
+            </children>
+        </MigPane>
+        <TreeView fx:id="treeKnow" prefHeight="600.0" prefWidth="Infinity" MigPane.cc="dock west, spanx,growx" />
+        <Accordion prefWidth="Infinity" MigPane.cc="dock east, spanx, growx">
+            <panes>
+                <TitledPane animated="false" text="Parent Answer">
+                    <content>
+                        <MigPane layout="fill" prefHeight="Infinity" prefWidth="Infinity" MigPane.cc="dock west, spanx,growx">
+                            <children>
+                                <TextArea fx:id="txtAns" prefHeight="Infinity" prefWidth="Infinity" MigPane.cc="span,grow" />
+                            </children>
+                        </MigPane>
+                    </content>
+                </TitledPane>
+                <TitledPane animated="false" text="Question">
+                    <content>
+                        <MigPane layout="fill" prefHeight="Infinity" prefWidth="Infinity" MigPane.cc="dock west, spanx,growx">
+                            <children>
+                                <TextArea fx:id="txtQuest" prefHeight="Infinity" prefWidth="Infinity" MigPane.cc="span,grow" />
+                            </children>
+                        </MigPane>
+                    </content>
+                </TitledPane>
+            </panes>
+        </Accordion>
+    </children>
+</MigPane>

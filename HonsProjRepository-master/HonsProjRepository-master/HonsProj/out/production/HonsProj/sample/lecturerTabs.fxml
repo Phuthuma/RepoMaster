@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import org.tbee.javafx.scene.layout.fxml.MigPane?>
+
+<MigPane prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.lecturerTabsCont">
+    <children>
+        <MigPane layout="wrap 2, fill" prefHeight="20.0" prefWidth="800.0" MigPane.cc="dock north">
+         <children>
+             <JFXButton mnemonicParsing="false" text="" visible="false" MigPane.cc="dock west" />
+             <JFXButton fx:id="btnLogOut" mnemonicParsing="false" style="-fx-background-color: #85c1e9;" text="LogOut" MigPane.cc="dock east" />
+         </children>
+        </MigPane>
+        <MigPane layout="fill" prefHeight="800.0" prefWidth="800.0" MigPane.cc="dock center">
+            <children>
+                <JFXTabPane prefHeight="800.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" MigPane.cc="span,grow">
+                    <tabs>
+                        <Tab text="Modules">
+                            <content>
+                                <MigPane layout="fill, wrap2" prefHeight="600.0" prefWidth="Infinity">
+                                    <children>
+                                        <MigPane layout="fill,wrap" prefHeight="600.0" prefWidth="Infinity" MigPane.cc="dock west, growx, shrink">
+                                            <children>
+                                                <JFXListView fx:id="lstMods" prefHeight="600.0" prefWidth="Infinity" MigPane.cc="growy,spany" />
+                                            </children>
+                                        </MigPane>
+                                        <MigPane layout="fill,wrap" prefHeight="600.0" prefWidth="Infinity" MigPane.cc="dock east, grow, shrink">
+                                            <children>
+                                                <JFXListView fx:id="lstTasks" prefHeight="Infinity" prefWidth="Infinity" MigPane.cc="grow,span" />
+                                                <MigPane layout="fill, wrap2" prefHeight="30.0" prefWidth="Infinity" MigPane.cc="growx,spanx">
+                                                    <JFXButton fx:id="btnNewTask" buttonType="RAISED" mnemonicParsing="false" style="-fx-background-color: #82e0aa;" text="New Task" MigPane.cc="dock west" />
+                                                    <JFXButton fx:id="btnDelTask" buttonType="RAISED" mnemonicParsing="false" style="-fx-background-color: e36953;" text="Delete Task" MigPane.cc="dock east" />
+                                                </MigPane>
+                                            </children>
+                                        </MigPane>
+                                        <Label fx:id="lblCode" text="Label" visible="false" />
+                                    </children>
+                                </MigPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Chat">
+                            <content>
+                                <MigPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <MigPane layout="fill" prefHeight="600.0" prefWidth="400.0" MigPane.cc="spany,growy">
+                                            <children>
+                                                <MigPane layout="fill, wrap2" prefHeight="40.0" prefWidth="400.0" />
+                                            </children>
+                                        </MigPane>
+                                        <MigPane layout="fill, wrap" layoutX="17.0" layoutY="17.0" prefHeight="400.0" prefWidth="400.0" MigPane.cc="spany,growy" />
+                                    </children></MigPane>
+                            </content>
+                        </Tab>
+                    </tabs>
+                </JFXTabPane>
+            </children></MigPane>
+    </children>
+</MigPane>

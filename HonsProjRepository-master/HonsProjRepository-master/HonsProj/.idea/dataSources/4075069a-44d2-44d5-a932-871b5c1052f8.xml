@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="SolAssist@postgrad.nmmu.ac.za">
+  <database-model serializer="dbm" rdbms="MSSQL" format-version="4.8">
+    <root id="1">
+      <ServerVersion>10.50.250</ServerVersion>
+      <ServerType>standalone</ServerType>
+    </root>
+    <database id="2" parent="1" name="SolAssist">
+      <ObjectId>58</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="master">
+      <ObjectId>1</ObjectId>
+    </database>
+    <database id="4" parent="1" name="tempdb">
+      <ObjectId>2</ObjectId>
+    </database>
+    <database id="5" parent="1" name="model">
+      <ObjectId>3</ObjectId>
+    </database>
+    <database id="6" parent="1" name="msdb">
+      <ObjectId>4</ObjectId>
+    </database>
+    <database id="7" parent="1" name="DemiSystem">
+      <ObjectId>5</ObjectId>
+    </database>
+    <database id="8" parent="1" name="ASPNETDB.MDF">
+      <ObjectId>6</ObjectId>
+    </database>
+    <database id="9" parent="1" name="predictions">
+      <ObjectId>7</ObjectId>
+    </database>
+    <database id="10" parent="1" name="DRIVEASSIST.MDF">
+      <ObjectId>8</ObjectId>
+    </database>
+    <database id="11" parent="1" name="MCMS_Database">
+      <ObjectId>9</ObjectId>
+    </database>
+    <database id="12" parent="1" name="liftclub">
+      <ObjectId>10</ObjectId>
+    </database>
+    <database id="13" parent="1" name="campus_coffee">
+      <ObjectId>11</ObjectId>
+    </database>
+    <database id="14" parent="1" name="AllocationSystem">
+      <ObjectId>12</ObjectId>
+    </database>
+    <database id="15" parent="1" name="FaniDP">
+      <ObjectId>13</ObjectId>
+    </database>
+    <database id="16" parent="1" name="CareerDatabase">
+      <ObjectId>14</ObjectId>
+    </database>
+    <database id="17" parent="1" name="AfricanVisDB">
+      <ObjectId>15</ObjectId>
+    </database>
+    <database id="18" parent="1" name="AlumniDB.MDF">
+      <ObjectId>16</ObjectId>
+    </database>
+    <database id="19" parent="1" name="ISD">
+      <ObjectId>17</ObjectId>
+    </database>
+    <database id="20" parent="1" name="IconDB">
+      <ObjectId>18</ObjectId>
+    </database>
+    <database id="21" parent="1" name="MoodleViz">
+      <ObjectId>19</ObjectId>
+    </database>
+    <database id="22" parent="1" name="SRCVoting">
+      <ObjectId>20</ObjectId>
+    </database>
+    <database id="23" parent="1" name="SASS">
+      <ObjectId>21</ObjectId>
+    </database>
+    <database id="24" parent="1" name="NMMUWalkerDB">
+      <ObjectId>22</ObjectId>
+    </database>
+    <database id="25" parent="1" name="EnviroDB">
+      <ObjectId>23</ObjectId>
+    </database>
+    <database id="26" parent="1" name="EnviroDW">
+      <ObjectId>24</ObjectId>
+    </database>
+    <database id="27" parent="1" name="ecofeedback">
+      <ObjectId>25</ObjectId>
+    </database>
+    <database id="28" parent="1" name="DB_ISD">
+      <ObjectId>26</ObjectId>
+    </database>
+    <database id="29" parent="1" name="Butterworths">
+      <ObjectId>27</ObjectId>
+    </database>
+    <database id="30" parent="1" name="ProjectAfrica">
+      <ObjectId>28</ObjectId>
+    </database>
+    <database id="31" parent="1" name="ButterworthsCandidates">
+      <ObjectId>29</ObjectId>
+    </database>
+    <database id="32" parent="1" name="AfricaDB">
+      <ObjectId>30</ObjectId>
+    </database>
+    <database id="33" parent="1" name="uyilomaps">
+      <ObjectId>31</ObjectId>
+    </database>
+    <database id="34" parent="1" name="Mistra">
+      <ObjectId>32</ObjectId>
+    </database>
+    <database id="35" parent="1" name="kitchen_secrets">
+      <ObjectId>33</ObjectId>
+    </database>
+    <database id="36" parent="1" name="Test2_Dumi">
+      <ObjectId>34</ObjectId>
+    </database>
+    <database id="37" parent="1" name="Test3_Dumi">
+      <ObjectId>35</ObjectId>
+    </database>
+    <database id="38" parent="1" name="ITS_Students">
+      <ObjectId>36</ObjectId>
+    </database>
+    <database id="39" parent="1" name="HEMIS_Students">
+      <ObjectId>37</ObjectId>
+    </database>
+    <database id="40" parent="1" name="CSEvents">
+      <ObjectId>38</ObjectId>
+    </database>
+    <database id="41" parent="1" name="POIDB">
+      <ObjectId>39</ObjectId>
+    </database>
+    <database id="42" parent="1" name="ResearchScoop">
+      <ObjectId>40</ObjectId>
+    </database>
+    <database id="43" parent="1" name="sellmystuff">
+      <ObjectId>41</ObjectId>
+    </database>
+    <database id="44" parent="1" name="purplehons">
+      <ObjectId>42</ObjectId>
+    </database>
+    <database id="45" parent="1" name="nmmu_meet">
+      <ObjectId>43</ObjectId>
+    </database>
+    <database id="46" parent="1" name="AnningDemiSystem">
+      <ObjectId>44</ObjectId>
+    </database>
+    <database id="47" parent="1" name="Brew">
+      <ObjectId>45</ObjectId>
+    </database>
+    <database id="48" parent="1" name="prop_tour">
+      <ObjectId>46</ObjectId>
+    </database>
+    <database id="49" parent="1" name="nmmu_navigator">
+      <ObjectId>47</ObjectId>
+    </database>
+    <database id="50" parent="1" name="urban_agri">
+      <ObjectId>48</ObjectId>
+    </database>
+    <database id="51" parent="1" name="UtilityAlert">
+      <ObjectId>49</ObjectId>
+    </database>
+    <database id="52" parent="1" name="FSMHons">
+      <ObjectId>50</ObjectId>
+    </database>
+    <database id="53" parent="1" name="patient_tracker">
+      <ObjectId>51</ObjectId>
+    </database>
+    <database id="54" parent="1" name="recycling">
+      <ObjectId>52</ObjectId>
+    </database>
+    <database id="55" parent="1" name="dac">
+      <ObjectId>53</ObjectId>
+    </database>
+    <database id="56" parent="1" name="ResourceManagementSystem">
+      <ObjectId>54</ObjectId>
+    </database>
+    <database id="57" parent="1" name="pmf">
+      <ObjectId>55</ObjectId>
+    </database>
+    <database id="58" parent="1" name="ProgressTracker">
+      <ObjectId>56</ObjectId>
+    </database>
+    <database id="59" parent="1" name="CS_Events">
+      <ObjectId>57</ObjectId>
+    </database>
+    <database id="60" parent="1" name="NMBS">
+      <ObjectId>59</ObjectId>
+    </database>
+    <database id="61" parent="1" name="AnningSAMS">
+      <ObjectId>60</ObjectId>
+    </database>
+    <database id="62" parent="1" name="PlayABAP">
+      <ObjectId>61</ObjectId>
+    </database>
+    <database id="63" parent="1" name="wasterecycle">
+      <ObjectId>62</ObjectId>
+    </database>
+    <database id="64" parent="1" name="watermate">
+      <ObjectId>63</ObjectId>
+    </database>
+    <schema id="65" parent="2" name="dbo">
+      <ObjectId>1</ObjectId>
+      <IntrospectionTimestamp>2018-07-06.15:42:58.577</IntrospectionTimestamp>
+      <Current>1</Current>
+      <Visible>1</Visible>
+      <DescriptionsCheckSum>2092444413</DescriptionsCheckSum>
+    </schema>
+    <schema id="66" parent="2" name="guest">
+      <ObjectId>2</ObjectId>
+    </schema>
+    <schema id="67" parent="2" name="INFORMATION_SCHEMA">
+      <ObjectId>3</ObjectId>
+    </schema>
+    <schema id="68" parent="2" name="sys">
+      <ObjectId>4</ObjectId>
+    </schema>
+    <schema id="69" parent="2" name="db_owner">
+      <ObjectId>16384</ObjectId>
+    </schema>
+    <schema id="70" parent="2" name="db_accessadmin">
+      <ObjectId>16385</ObjectId>
+    </schema>
+    <schema id="71" parent="2" name="db_securityadmin">
+      <ObjectId>16386</ObjectId>
+    </schema>
+    <schema id="72" parent="2" name="db_ddladmin">
+      <ObjectId>16387</ObjectId>
+    </schema>
+    <schema id="73" parent="2" name="db_backupoperator">
+      <ObjectId>16389</ObjectId>
+    </schema>
+    <schema id="74" parent="2" name="db_datareader">
+      <ObjectId>16390</ObjectId>
+    </schema>
+    <schema id="75" parent="2" name="db_datawriter">
+      <ObjectId>16391</ObjectId>
+    </schema>
+    <schema id="76" parent="2" name="db_denydatareader">
+      <ObjectId>16392</ObjectId>
+    </schema>
+    <schema id="77" parent="2" name="db_denydatawriter">
+      <ObjectId>16393</ObjectId>
+    </schema>
+    <table id="78" parent="65" name="Lecturer">
+      <ObjectId>2121058592</ObjectId>
+      <Comment>stores lecturer related data</Comment>
+      <CreatedTimestamp>2018-06-18.14:36:22.300</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-28.23:22:04.173</ModifiedTimestamp>
+    </table>
+    <table id="79" parent="65" name="Module">
+      <ObjectId>53575229</ObjectId>
+      <CreatedTimestamp>2018-06-18.15:36:39.997</CreatedTimestamp>
+      <ModifiedTimestamp>2018-07-06.15:42:58.487</ModifiedTimestamp>
+    </table>
+    <table id="80" parent="65" name="Student">
+      <ObjectId>133575514</ObjectId>
+      <CreatedTimestamp>2018-06-28.15:38:18.323</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-28.23:22:57.907</ModifiedTimestamp>
+    </table>
+    <table id="81" parent="65" name="Task">
+      <ObjectId>373576369</ObjectId>
+      <CreatedTimestamp>2018-07-06.15:42:15.523</CreatedTimestamp>
+      <ModifiedTimestamp>2018-07-06.15:42:58.487</ModifiedTimestamp>
+    </table>
+    <column id="82" parent="78" name="LectCode">
+      <Position>1</Position>
+      <DataType>varchar(20 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="83" parent="78" name="Name">
+      <Position>2</Position>
+      <DataType>char(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="84" parent="78" name="Email">
+      <Position>3</Position>
+      <DataType>varchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="85" parent="78" name="Password">
+      <Position>5</Position>
+      <DataType>varchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="86" parent="78" name="PK__Lecturer__AD53A8FC00551192">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>LectCode</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <index id="87" parent="78" name="Lecturer_LectCode_uindex">
+      <Position>2</Position>
+      <ColNames>LectCode</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="88" parent="78" name="Lecturer_Email_uindex">
+      <Position>3</Position>
+      <ColNames>Email</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="89" parent="78" name="PK__Lecturer__AD53A8FC00551192">
+      <ObjectId>21575115</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2018-06-18.14:36:22.300</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-18.14:36:22.300</ModifiedTimestamp>
+      <ColNames>LectCode</ColNames>
+      <UnderlyingIndexName>PK__Lecturer__AD53A8FC00551192</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="90" parent="79" name="ModCode">
+      <Position>1</Position>
+      <DataType>varchar(10 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="91" parent="79" name="ModName">
+      <Position>2</Position>
+      <DataType>varchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="92" parent="79" name="ModLevel">
+      <Position>3</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="93" parent="79" name="LectCode">
+      <Position>4</Position>
+      <DataType>varchar(20 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="94" parent="79" name="PK__Module__116BEA610519C6AF">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ModCode</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <index id="95" parent="79" name="Module_ModCode_uindex">
+      <Position>2</Position>
+      <ColNames>ModCode</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="96" parent="79" name="PK__Module__116BEA610519C6AF">
+      <ObjectId>101575400</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2018-06-18.15:36:40</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-18.15:36:40</ModifiedTimestamp>
+      <ColNames>ModCode</ColNames>
+      <UnderlyingIndexName>PK__Module__116BEA610519C6AF</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="97" parent="79" name="FK__Module__LectCode__07020F21">
+      <ObjectId>117575457</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2018-06-18.15:36:40</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-18.15:36:40</ModifiedTimestamp>
+      <ColNames>LectCode</ColNames>
+      <RefTableId>2121058592</RefTableId>
+      <RefSchemaName>dbo</RefSchemaName>
+      <RefTableName>Lecturer</RefTableName>
+      <RefKeyName>PK__Lecturer__AD53A8FC00551192</RefKeyName>
+      <RefColNames>LectCode</RefColNames>
+    </foreign-key>
+    <column id="98" parent="80" name="StudNo">
+      <Position>1</Position>
+      <DataType>varchar(12 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="99" parent="80" name="StudName">
+      <Position>2</Position>
+      <DataType>varchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="100" parent="80" name="StudMail">
+      <Position>3</Position>
+      <DataType>varchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="101" parent="80" name="Course">
+      <Position>4</Position>
+      <DataType>varchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="102" parent="80" name="Password">
+      <Position>6</Position>
+      <DataType>varchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="103" parent="80" name="PK__table_na__F5FF60DB09DE7BCC">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>StudNo</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <index id="104" parent="80" name="table_name_StudNo_uindex">
+      <Position>2</Position>
+      <ColNames>StudNo</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="105" parent="80" name="Student_StudMail_uindex">
+      <Position>3</Position>
+      <ColNames>StudMail</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="106" parent="80" name="PK__table_na__F5FF60DB09DE7BCC">
+      <ObjectId>181575685</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2018-06-28.15:38:18.323</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-28.15:38:18.323</ModifiedTimestamp>
+      <ColNames>StudNo</ColNames>
+      <UnderlyingIndexName>PK__table_na__F5FF60DB09DE7BCC</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="107" parent="81" name="TaskCode">
+      <Position>1</Position>
+      <DataType>varchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="108" parent="81" name="TaskNo">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="109" parent="81" name="TaskTitle">
+      <Position>3</Position>
+      <DataType>varchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="110" parent="81" name="ModCode">
+      <Position>4</Position>
+      <DataType>varchar(10 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="111" parent="81" name="PK__Task__251D0698182C9B23">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>TaskCode</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <index id="112" parent="81" name="Task_TaskCode_uindex">
+      <Position>2</Position>
+      <ColNames>TaskCode</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="113" parent="81" name="PK__Task__251D0698182C9B23">
+      <ObjectId>421576540</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2018-07-06.15:42:15.527</CreatedTimestamp>
+      <ModifiedTimestamp>2018-07-06.15:42:15.527</ModifiedTimestamp>
+      <ColNames>TaskCode</ColNames>
+      <UnderlyingIndexName>PK__Task__251D0698182C9B23</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="114" parent="81" name="Task___fk">
+      <ObjectId>437576597</ObjectId>
+      <CreatedTimestamp>2018-07-06.15:42:58.487</CreatedTimestamp>
+      <ModifiedTimestamp>2018-07-06.15:42:58.487</ModifiedTimestamp>
+      <ColNames>ModCode</ColNames>
+      <RefTableId>53575229</RefTableId>
+      <RefSchemaName>dbo</RefSchemaName>
+      <RefTableName>Module</RefTableName>
+      <RefKeyName>PK__Module__116BEA610519C6AF</RefKeyName>
+      <RefColNames>ModCode</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>

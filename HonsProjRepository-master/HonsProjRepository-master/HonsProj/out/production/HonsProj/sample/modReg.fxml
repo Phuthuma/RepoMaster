@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.text.Font?>
+<?import org.tbee.javafx.scene.layout.fxml.MigPane?>
+
+<MigPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ModRegCont">
+   <children>
+      <MigPane layout="wrap 2, fill" prefHeight="20.0" prefWidth="Infinity" MigPane.cc="dock north">
+         <children>
+            <JFXButton mnemonicParsing="false" text="" visible="false" MigPane.cc="dock west" />
+            <JFXButton fx:id="btnLogOut" mnemonicParsing="false" style="-fx-background-color: #85c1e9;" text="LogOut" MigPane.cc="dock east" />
+         </children>
+      </MigPane>
+      <MigPane layout="fill" prefHeight="Infinity" prefWidth="Infinity">
+         <children>
+            <JFXTabPane prefHeight="Infinity" prefWidth="Infinity" tabClosingPolicy="UNAVAILABLE" MigPane.cc="span, grow">
+               <tabs>
+                  <Tab text="Modules">
+                    <content>
+                      <MigPane layout="fill, wrap2" minHeight="0.0" minWidth="0.0" prefHeight="Infinity" prefWidth="Infinity">
+                           <children>
+                              <MigPane layout="fill" prefHeight="Infinity" prefWidth="Infinity" MigPane.cc="spany,growy">
+                                 <children>
+                                    <JFXListView fx:id="lstMods" prefHeight="Infinity" prefWidth="Infinity" MigPane.cc="wrap, span,grow" />
+                                    <MigPane layout="fill, wrap2" prefHeight="40.0" prefWidth="Infinity">
+                                       <JFXButton fx:id="btnNewMod" buttonType="RAISED" mnemonicParsing="false" style="-fx-background-color: #82e0aa;" text="New Module" MigPane.cc="dock west" />
+                                       <JFXButton fx:id="btnDelMod" buttonType="RAISED" mnemonicParsing="false" style="-fx-background-color: e36953;" text="Delete Module" MigPane.cc="dock east" />
+                                    </MigPane>
+                                 </children>
+                              </MigPane>
+                              <MigPane layout="fill, wrap" layoutX="17.0" layoutY="17.0" prefHeight="400.0" prefWidth="Infinity" MigPane.cc="spany,growy">
+                                 <children>
+                                    <Accordion MigPane.cc="span, grow">
+                                      <panes>
+                                         <TitledPane animated="true" expanded="false" text="Edit Module" MigPane.cc="span, grow">
+                                            <content>
+                                               <MigPane layout="fillx" prefHeight="200.0" prefWidth="200.0">
+                                                  <children>
+                                                     <JFXTextField fx:id="txtModCode" editable="false" labelFloat="true" promptText="Module Code" MigPane.cc="spanx, growx, gapy unrelated, wrap">
+                                                        <font>
+                                                           <Font size="16.0" />
+                                                        </font></JFXTextField>
+                                                     <JFXTextField fx:id="txtModName" labelFloat="true" promptText="Module Name" MigPane.cc="spanx, growx, gapy unrelated, wrap">
+                                                        <font>
+                                                           <Font size="16.0" />
+                                                        </font></JFXTextField>
+                                                     <Label text="Module Level:" />
+                                                     <Spinner fx:id="spnModLev" maxWidth="50.0" MigPane.cc="spanx, growx, gapy unrelated, wrap" />
+                                                     <JFXButton fx:id="btnSaveMod" buttonType="RAISED" mnemonicParsing="false" style="-fx-background-color: #82e0aa;" text="Save Changes" MigPane.cc="spanx, growx, gapy unrelated" />
+                                                  </children>
+                                               </MigPane>
+                                            </content>
+                                         </TitledPane>
+                                         <TitledPane animated="true" expanded="false" text="Edit Lecturer" MigPane.cc="span, grow">
+                                            <content>
+                                               <MigPane layout="fillx,wrap" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                  <children>
+                                                     <JFXTextField fx:id="txtLectCode" editable="false" labelFloat="true" promptText="Lecturer Code" MigPane.cc="spanx, growx, gapy unrelated">
+                                                        <font>
+                                                           <Font size="16.0" />
+                                                        </font>
+                                                     </JFXTextField>
+                                                     <JFXTextField fx:id="txtLectName" labelFloat="true" layoutX="17.0" layoutY="17.0" promptText="Lecturer Name" MigPane.cc="spanx, growx, gapy unrelated">
+                                                        <font>
+                                                           <Font size="16.0" />
+                                                        </font>
+                                                     </JFXTextField>
+                                                     <JFXTextField fx:id="txtLectEmail" labelFloat="true" layoutX="17.0" layoutY="17.0" promptText="Email" MigPane.cc="spanx, growx, gapy unrelated">
+                                                        <font>
+                                                           <Font size="16.0" />
+                                                        </font>
+                                                     </JFXTextField>
+                                                     <JFXButton fx:id="btnSaveLect" buttonType="RAISED" mnemonicParsing="false" style="-fx-background-color: #82e0aa;" text="Save Changes" MigPane.cc="spanx, growx, gapy unrelated" />
+                                                  </children></MigPane>
+                                            </content>
+                                         </TitledPane>
+                                      </panes>
+                                    </Accordion>
+                                 </children></MigPane>
+                           </children></MigPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Lecturers">
+                     <content>
+                        <MigPane minHeight="0.0" minWidth="0.0" prefHeight="Infinity" prefWidth="Infinity">
+                           <children>
+                              <MigPane layout="fill" prefHeight="Infinity" prefWidth="Infinity" MigPane.cc="spany,growy">
+                                 <children>
+                                    <JFXListView fx:id="lstLects" prefHeight="Infinity" prefWidth="Infinity" MigPane.cc="wrap, span, grow" />
+                                    <MigPane layout="fill, wrap2" prefHeight="40.0" prefWidth="Infinity">
+                                       <JFXButton fx:id="btnNewLect" buttonType="RAISED" mnemonicParsing="false" style="-fx-background-color: #82e0aa;" text="New Lecturer" MigPane.cc="dock west" />
+                                       <JFXButton fx:id="btnDelLect" buttonType="RAISED" mnemonicParsing="false" style="-fx-background-color: e36953;" text="Delete Lecturer" MigPane.cc="dock east" />
+                                    </MigPane>
+                                 </children>
+                              </MigPane>
+                              <MigPane layout="fill, wrap" layoutX="17.0" layoutY="17.0" prefHeight="Infinity" prefWidth="Infinity" MigPane.cc="spany,growy">
+                                 <children>
+                                    <TitledPane animated="true" expanded="false" text="Edit Lecturer" MigPane.cc="span, grow">
+                                       <content>
+                                          <MigPane layout="fillx,wrap" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <JFXTextField fx:id="txtLectEditCode" editable="false" labelFloat="true" promptText="Lecturer Code" MigPane.cc="spanx, growx, gapy unrelated">
+                                                   <font>
+                                                      <Font size="16.0" />
+                                                   </font>
+                                                </JFXTextField>
+                                                <JFXTextField fx:id="txtLectEditName" labelFloat="true" layoutX="17.0" layoutY="17.0" promptText="Lecturer Name" MigPane.cc="spanx, growx, gapy unrelated">
+                                                   <font>
+                                                      <Font size="16.0" />
+                                                   </font>
+                                                </JFXTextField>
+                                                <JFXTextField fx:id="txtLectEditEmail" labelFloat="true" layoutX="17.0" layoutY="17.0" promptText="Email" MigPane.cc="spanx, growx, gapy unrelated">
+                                                   <font>
+                                                      <Font size="16.0" />
+                                                   </font>
+                                                </JFXTextField>
+                                                <JFXButton fx:id="btnLectEditSave" buttonType="RAISED" mnemonicParsing="false" style="-fx-background-color: #82e0aa;" text="Save Changes" MigPane.cc="spanx, growx, gapy unrelated" />
+                                             </children></MigPane>
+                                       </content>
+                                    </TitledPane>
+                                 </children></MigPane>
+                           </children></MigPane>
+                     </content>
+                  </Tab>
+               </tabs>
+            </JFXTabPane>
+         </children></MigPane>
+   </children>
+</MigPane>

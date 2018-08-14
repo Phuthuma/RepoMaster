@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import org.tbee.javafx.scene.layout.fxml.MigPane?>
+
+<MigPane maxHeight="800" maxWidth="800" minHeight="800.0" minWidth="800.0" prefHeight="800.0" prefWidth="800.0"
+         xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.signUpCont">
+    <children>
+        <MigPane prefHeight="200.0" prefWidth="200.0" MigPane.cc="dock north" />
+        <MigPane prefHeight="200.0" prefWidth="200.0" MigPane.cc="dock east" />
+        <MigPane layout="fill, wrap" prefHeight="200.0" prefWidth="200.0" MigPane.cc="dock center">
+            <children>
+                <JFXTextField fx:id="txtStudNo" labelFloat="true" promptText="Enter Student Number" MigPane.cc="spanx, growx, gapy 30" />
+                <JFXTextField fx:id="txtName" labelFloat="true" promptText="Enter Name" MigPane.cc="spanx, growx, gapy 30" />
+                <JFXTextField fx:id="txtEmail" labelFloat="true" promptText="Enter Email" MigPane.cc="spanx, growx, gapy 30" />
+                <JFXTextField fx:id="txtCourse" labelFloat="true" promptText="Enter Course of Study" MigPane.cc="spanx, growx, gapy 30" />
+                <JFXPasswordField fx:id="txtPass" labelFloat="true" promptText="Enter Password" MigPane.cc="spanx, growx, gapy 30" />
+                <JFXPasswordField fx:id="txtPassCon" labelFloat="true" promptText="Re-enter Password" MigPane.cc="spanx, growx, gapy 30" />
+            <MigPane layout="wrap2, fill" prefHeight="200.0" prefWidth="200.0" MigPane.cc="spanx, growx, gapy 30">
+               <children>
+                   <JFXButton fx:id="btnSignUp" mnemonicParsing="false" style="-fx-background-color: #85c1e9;" text="Sign Up" MigPane.cc="spanx, growx, dock west" />
+                   <JFXButton fx:id="btnCancel" mnemonicParsing="false" style="-fx-background-color: #85c1e9;" text="Cancel" MigPane.cc="spanx, growx, dock east" />
+               </children>
+            </MigPane>
+            </children></MigPane>
+        <MigPane prefHeight="200.0" prefWidth="200.0" MigPane.cc="dock west" />
+        <MigPane prefHeight="200.0" prefWidth="200.0" MigPane.cc="dock south" />
+    </children>
+</MigPane>
