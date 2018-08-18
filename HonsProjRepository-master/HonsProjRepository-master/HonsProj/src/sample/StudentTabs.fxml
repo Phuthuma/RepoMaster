@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Font?>
+<?import org.tbee.javafx.scene.layout.fxml.MigPane?>
+
+<MigPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.studentTabsCont">
+   <children>
+      <MigPane layout="fill, wrap2" prefHeight="80.0" prefWidth="Infinity"  MigPane.cc="dock north, spanx, growx">
+         <children>
+            <Label fx:id="lblWelcome" text="Welcome" MigPane.cc="dock west">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <JFXButton maxHeight="40.0" fx:id="btnLogOut" style="-fx-background-color: #85c1e9;" buttonType="RAISED" mnemonicParsing="false" text="LogOut" MigPane.cc="dock east" />
+         </children></MigPane>
+   </children>
+</MigPane>

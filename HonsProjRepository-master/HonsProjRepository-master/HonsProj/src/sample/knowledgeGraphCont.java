@@ -167,6 +167,25 @@ public class knowledgeGraphCont implements Initializable {
             e.printStackTrace();
         }
     }
+    /*
+    private void refreshSelectedListItem() {
+        int index = lstMods.getSelectionModel().getSelectedIndex();
+
+        if (index >= 0) {
+
+            lstMods.fireEvent(
+                    new ListView.EditEvent<>(
+                            lstMods,
+                            ListView.editCommitEvent(),
+                            obsMods.get(index),
+                            index
+                    )
+            );
+
+            // unfortunately, the event loses the currently selected item, so reselect it
+            lstMods.getSelectionModel().select(index);
+        }
+    }*/
     private void addItems(Element curElem, TreeItem<Node>curItem) {
         Node newNode=new Node();
         newNode.setNodeNo(Integer.parseInt(curElem.getAttribute("no")));

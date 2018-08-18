@@ -11,7 +11,7 @@
     <children>
         <MigPane layout="wrap 2, fill" prefHeight="20.0" prefWidth="800.0" MigPane.cc="dock north">
          <children>
-             <JFXButton mnemonicParsing="false" text="" visible="false" MigPane.cc="dock west" />
+             <Label fx:id="lblCode" visible="false" text="text" MigPane.cc="dock west"></Label>
              <JFXButton fx:id="btnLogOut" mnemonicParsing="false" style="-fx-background-color: #85c1e9;" text="LogOut" MigPane.cc="dock east" />
          </children>
         </MigPane>
@@ -37,7 +37,6 @@
                                                 </MigPane>
                                             </children>
                                         </MigPane>
-                                        <Label fx:id="lblCode" text="Label" visible="false" />
                                     </children>
                                 </MigPane>
                             </content>

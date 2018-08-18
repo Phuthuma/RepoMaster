@@ -420,7 +420,6 @@ public class TextFieldTreeCellImpl extends TreeCell<Node> {
     }
 
     //for selection
-
     private void createTextField(){
         txtField=new TextField(getNode().toString());
         txtField.setOnKeyReleased(event -> {

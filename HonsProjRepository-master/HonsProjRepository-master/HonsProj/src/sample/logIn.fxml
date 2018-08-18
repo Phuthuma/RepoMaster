@@ -27,7 +27,7 @@
                     <Font size="18.0" />
                 </font>
             </JFXPasswordField>
-            <JFXButton fx:id="btnSignIn" mnemonicParsing="false" style="-fx-background-color: #85c1e9;" text="Sign In" MigPane.cc="spanx, growx, gapy 30">
+            <JFXButton fx:id="btnSignIn" buttonType="RAISED" mnemonicParsing="false" style="-fx-background-color: #85c1e9;" text="Sign In" MigPane.cc="spanx, growx, gapy 30">
                 <font>
                <Font size="18.0" />
             </font>

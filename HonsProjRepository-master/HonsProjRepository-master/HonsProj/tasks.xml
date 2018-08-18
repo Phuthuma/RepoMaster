@@ -4,10 +4,30 @@
         <node no="0">
             <question/>
             <answer/>
+            <children/>
+        </node>
+    </task>
+    <task id="WRAP301T1">
+        <node no="0">
+            <question>How is data accessed from a stack?
+            </question>
+            <answer>How is data accessed from a stack?
+            </answer>
             <children>
                 <node no="1">
-                    <question>How do you traverse a DLL?</question>
-                    <answer>There is no answer</answer>
+                    <question>What is the worst case-performance of carrying-out operations on a stack?</question>
+                    <answer>LIFO</answer>
+                    <children>
+                        <node no="3">
+                            <question/>
+                            <answer>O(N)</answer>
+                            <children/>
+                        </node>
+                    </children>
+                </node>
+                <node no="3">
+                    <question>quest</question>
+                    <answer>answe</answer>
                     <children/>
                 </node>
             </children>

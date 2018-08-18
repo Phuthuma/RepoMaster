@@ -7,6 +7,7 @@ import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.validation.RequiredFieldValidator;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -56,8 +57,158 @@ public class logInCont implements Initializable {
         obsTypes.add("Lecturer");
         obsTypes.add("System Administrator");
         cmbType.setItems(obsTypes);
-
         setValidations();
+        btnSignIn.setOnAction(event -> {
+            //student
+            if(cmbType.getSelectionModel().getSelectedItem().matches(obsTypes.get(0))){
+                connect();
+                String sql="select * from Student where StudNo = ?";
+
+                try {
+                    PreparedStatement stmt=con.prepareStatement(sql);
+                    stmt.setString(1,txtUname.getText());
+                    ResultSet result=stmt.executeQuery();
+                    if(result.next()){
+                        String pass=result.getString("Password");
+                        String name=result.getString("StudName");
+                        if(pass.matches(txtPass.getText())){
+                            FXMLLoader loader=new FXMLLoader();
+                            loader.setLocation(getClass().getResource("StudentTabs.fxml"));
+                            Parent root=(Parent) loader.load();
+                            studentTabsCont cont=loader.getController();
+                            cont.setName(name);
+                            Stage newStage=new Stage();
+                            newStage.setTitle("SolAssist");
+                            newStage.setScene(new Scene(root));
+                            newStage.setMaximized(true);
+                            Stage primeStage= (Stage) ((Node)event.getSource()).getScene().getWindow();
+                            primeStage.close();
+                            newStage.show();
+                        }else {
+                            Alert alert=new Alert(Alert.AlertType.ERROR);
+                            alert.setTitle("Error");
+                            alert.setHeaderText("Invalid password!");
+                            alert.showAndWait();
+                        }
+                    }else {
+                        Alert alert=new Alert(Alert.AlertType.ERROR);
+                        alert.setTitle("Error");
+                        alert.setHeaderText("Invalid Username!");
+                        alert.showAndWait();
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                disconnect();
+            }
+            //lecturer
+            else if(cmbType.getSelectionModel().getSelectedItem().matches(obsTypes.get(1))){
+                connect();
+                String sql="select Password from Lecturer where LectCode = ?";
+                try {
+                    PreparedStatement stmt=con.prepareStatement(sql);
+                    stmt.setString(1,txtUname.getText());
+                    ResultSet result=stmt.executeQuery();
+                    if(result.next()){
+                        String pass=result.getString("Password");
+                        if(pass.matches(txtPass.getText())){
+                            FXMLLoader loader=new FXMLLoader();
+                            loader.setLocation(getClass().getResource("lecturerTabs.fxml"));
+                            Parent root=(Parent) loader.load();
+                            lecturerTabsCont cont=loader.getController();
+                            cont.setCode(txtUname.getText());
+                            Stage newStage=new Stage();
+                            newStage.setTitle("Modules");
+                            newStage.setScene(new Scene(root));
+                            newStage.setMaximized(true);
+                            cont.setUpMods();
+                            cont.setUpTasks();
+                            cont.selectFirst();
+                            Stage primeStage= (Stage) ((Node)event.getSource()).getScene().getWindow();
+                            primeStage.close();
+                            newStage.show();
+                        }else {
+                            Alert alert=new Alert(Alert.AlertType.ERROR);
+                            alert.setTitle("Error");
+                            alert.setHeaderText("Invalid password!");
+                            alert.showAndWait();
+                        }
+                    }else {
+                        Alert alert=new Alert(Alert.AlertType.ERROR);
+                        alert.setTitle("Error");
+                        alert.setHeaderText("Invalid Username!");
+                        alert.showAndWait();
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                disconnect();
+            }
+            //System Administrator
+            else if(cmbType.getSelectionModel().getSelectedItem().matches(obsTypes.get(2))) {
+                DocumentBuilderFactory factory=DocumentBuilderFactory.newInstance();
+                try {
+                    DocumentBuilder builder=factory.newDocumentBuilder();
+                    Document doc=builder.parse(new File("adminInfo.xml"));
+
+                    Element rootElem=doc.getDocumentElement();
+                    NodeList nodes=rootElem.getChildNodes();
+
+                    System.out.println("No of Nodes: "+nodes.getLength());
+
+                    Element unameElem= (Element) nodes.item(1);
+                    //username found
+                    if(unameElem.getTextContent().matches(txtUname.getText())){
+                        Element passElem= (Element) nodes.item(7);
+                        if(passElem.getTextContent().matches(txtPass.getText())){
+                            FXMLLoader loader=new FXMLLoader();
+                            loader.setLocation(getClass().getResource("modReg.fxml"));
+                            try {
+                                Parent parent=loader.load();
+                                Stage newStage=new Stage();
+                                newStage.setTitle("Module Register");
+                                newStage.setScene(new Scene(parent));
+                                newStage.setMaximized(true);
+                                Stage primeStage= (Stage) ((Node)event.getSource()).getScene().getWindow();
+                                primeStage.close();
+                                newStage.show();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        else {
+                            Alert alert=new Alert(Alert.AlertType.ERROR);
+                            alert.setTitle("Error");
+                            alert.setHeaderText("Wrong password!");
+                            alert.showAndWait();
+                        }
+
+                    }else {
+                        Alert alert=new Alert(Alert.AlertType.ERROR);
+                        alert.setTitle("Error");
+                        alert.setHeaderText("Invalid Username!");
+                        alert.showAndWait();
+                    }
+
+
+                } catch (ParserConfigurationException e) {
+                    e.printStackTrace();
+                } catch (SAXException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            //validation error
+            else {
+
+            }
+
+        });
         lblSignIn.setOnAction(event -> {
             Parent addRoot = null;
             try {
@@ -98,118 +249,6 @@ public class logInCont implements Initializable {
 
             } catch (IOException e) {
                 e.printStackTrace();
-            }
-        });
-        btnSignIn.setOnAction(event -> {
-            //student
-            if(cmbType.getSelectionModel().getSelectedItem().matches(obsTypes.get(0))){
-
-            }
-            //lecturer
-            else if(cmbType.getSelectionModel().getSelectedItem().matches(obsTypes.get(1))){
-                connect();
-                String sql="select Password from Lecturer where LectCode = ?";
-                try {
-                    PreparedStatement stmt=con.prepareStatement(sql);
-                    stmt.setString(1,txtUname.getText());
-                    ResultSet result=stmt.executeQuery();
-                    if(result.next()){
-                        String pass=result.getString("Password");
-                        if(pass.matches(txtPass.getText())){
-                            FXMLLoader loader=new FXMLLoader();
-                            loader.setLocation(getClass().getResource("lecturerTabs.fxml"));
-                            try {
-                                Parent parent=loader.load();
-                                lecturerTabsCont cont=loader.<lecturerTabsCont>getController();
-                                cont.setCode(txtUname.getText());
-                                cont.initialize(loader.getLocation(),loader.getResources());
-                                Stage newStage=new Stage();
-                                newStage.setScene(new Scene(parent));
-                                newStage.setTitle("Modules");
-                                newStage.setMaximized(true);
-                                Stage primeStage= (Stage) ((Node)event.getSource()).getScene().getWindow();
-                                primeStage.close();
-                                newStage.show();
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-                        }else {
-                            Alert alert=new Alert(Alert.AlertType.ERROR);
-                            alert.setTitle("Error");
-                            alert.setHeaderText("Invalid password!");
-                            alert.showAndWait();
-                        }
-                    }else {
-                        Alert alert=new Alert(Alert.AlertType.ERROR);
-                        alert.setTitle("Error");
-                        alert.setHeaderText("Invalid Username!");
-                        alert.showAndWait();
-                    }
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-                disconnect();
-            }
-            //System Administrator
-            else if(cmbType.getSelectionModel().getSelectedItem().matches(obsTypes.get(2))) {
-                DocumentBuilderFactory factory=DocumentBuilderFactory.newInstance();
-                try {
-                    DocumentBuilder builder=factory.newDocumentBuilder();
-                    Document doc=builder.parse(new File("adminInfo.xml"));
-
-                    Element rootElem=doc.getDocumentElement();
-                    NodeList nodes=rootElem.getChildNodes();
-
-                    System.out.println("No of Nodes: "+nodes.getLength());
-
-                    Element unameElem= (Element) nodes.item(1);
-                    //username found
-                    if(unameElem.getTextContent().matches(txtUname.getText())){
-                        Element passElem= (Element) nodes.item(7);
-                        if(passElem.getTextContent().matches(txtPass.getText())){
-                            FXMLLoader loader=new FXMLLoader();
-                            loader.setLocation(getClass().getResource("modReg.fxml"));
-                            try {
-                                Parent parent=loader.load();
-                                ModRegCont cont=loader.getController();
-                                cont.initialize(loader.getLocation(),loader.getResources());
-                                Stage newStage=new Stage();
-                                newStage.setTitle("Module Register");
-                                newStage.setScene(new Scene(parent));
-                                newStage.setMaximized(true);
-                                Stage primeStage= (Stage) ((Node)event.getSource()).getScene().getWindow();
-                                primeStage.close();
-                                newStage.show();
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        else {
-                            Alert alert=new Alert(Alert.AlertType.ERROR);
-                            alert.setTitle("Error");
-                            alert.setHeaderText("Wrong password!");
-                            alert.showAndWait();
-                        }
-
-                    }else {
-                        Alert alert=new Alert(Alert.AlertType.ERROR);
-                        alert.setTitle("Error");
-                        alert.setHeaderText("Invalid Username!");
-                        alert.showAndWait();
-                    }
-
-
-                } catch (ParserConfigurationException e) {
-                    e.printStackTrace();
-                } catch (SAXException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            //validation error
-            else {
-
             }
         });
         lblChangePass.setOnAction(event -> {

@@ -13,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
 import javafx.scene.input.MouseButton;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -72,8 +73,6 @@ public class lecturerTabsCont implements Initializable {
                 lstTasks.getSelectionModel().selectFirst();
             }
         });
-        lstMods.getSelectionModel().selectFirst();
-
         lstTasks.setOnMouseClicked(event -> {
             if((event.getButton()==MouseButton.PRIMARY)&&(event.getClickCount()==2)){
                 FXMLLoader loader = new FXMLLoader();
@@ -84,13 +83,13 @@ public class lecturerTabsCont implements Initializable {
                     cont.setLblTreeTitle(lstTasks.getSelectionModel().getSelectedItem().titleProperty().get());
                     cont.setLblTaskId(lstTasks.getSelectionModel().getSelectedItem().taskIdProperty().get());
                     cont.setUname(lblCode.getText());
-                    cont.initialize(loader.getLocation(), loader.getResources());
                     Stage newStage = new Stage();
-                    newStage.setTitle("Knowledge Graph");
+                    newStage.setTitle("Knowledge-Tree");
                     newStage.setScene(new Scene(parent));
                     newStage.setMaximized(true);
                     Stage primeStage= (Stage) ((javafx.scene.Node)event.getSource()).getScene().getWindow();
                     primeStage.close();
+                    cont.setUpNodes();
                     newStage.show();
 
                 } catch (IOException e) {
@@ -98,6 +97,7 @@ public class lecturerTabsCont implements Initializable {
                 }
             }
         });
+        lstTasks.setTooltip(new Tooltip("Double-Click to view Knowledge-Tree for this task"));
 
         btnNewTask.setOnAction(event -> {
             if(lstMods.getSelectionModel().getSelectedItem()!=null) {
@@ -200,9 +200,11 @@ public class lecturerTabsCont implements Initializable {
                 e.printStackTrace();
             }
         });
+
+        lstMods.getSelectionModel().selectFirst();
     }
 
-    private void setUpMods(){
+    public void setUpMods(){
         connect();
         String sql="select * from Module where LectCode = ?";
         try {
@@ -222,7 +224,7 @@ public class lecturerTabsCont implements Initializable {
         }
         disconnect();
     }
-    private void setUpTasks(){
+    public void setUpTasks(){
         for (Module module:obsMods) {
             connect();
             String sql="select * from Task where ModCode = ?";
@@ -246,9 +248,6 @@ public class lecturerTabsCont implements Initializable {
     public void setCode(String code){
         lblCode.setText(code);
     }
-    private String getCode(){
-        return lblCode.getText();
-    }
     private void delTaskFromXML(Document doc) throws ParserConfigurationException, IOException, SAXException, XPathExpressionException {
 
         XPathFactory xpFact=XPathFactory.newInstance();
@@ -265,6 +264,10 @@ public class lecturerTabsCont implements Initializable {
                 doc.getDocumentElement().removeChild(curNode);
             }
         }
+    }
+
+    public void selectFirst(){
+        lstMods.getSelectionModel().selectFirst();
     }
 
     private void saveDoc(Document doc, String filename) throws Exception {
@@ -290,7 +293,6 @@ public class lecturerTabsCont implements Initializable {
         // close file
         fout.close();
     }
-
     private void connect(){
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");

@@ -28,8 +28,6 @@ import java.util.ResourceBundle;
 
 public class ModRegCont implements Initializable {
     //variables
-    private int index=0;
-
     private Connection con=null;
     private ArrayList<Module>mods;
     private ObservableList<Module>obsMods;
@@ -67,6 +65,11 @@ public class ModRegCont implements Initializable {
         setUpMods();
 
         lstMods.setItems(obsMods);
+        System.out.println("The list has: "+lstMods.getItems().size());
+        for(int i=0;i<lstMods.getItems().size();i++){
+            Module curMod=lstMods.getItems().get(i);
+            System.out.println(i+") "+curMod.modCodeProperty().getValue());
+        }
 
         lstMods.getSelectionModel().selectedItemProperty().addListener(((observable, oldValue, newValue) -> {
             if(oldValue!=null){
